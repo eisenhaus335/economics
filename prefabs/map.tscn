@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://components/world.gd" type="Script" id=1]
+[ext_resource path="res://prefabs/path.tscn" type="PackedScene" id=2]
+
+[node name="World" type="Node2D"]
+script = ExtResource( 1 )
+paths = [ NodePath("Map/path"), NodePath("Map/path2"), NodePath("Map/path3") ]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="Map" type="Node" parent="."]
+
+[node name="path" parent="Map" instance=ExtResource( 2 )]
+position = Vector2( 77, -130 )
+neighbours = [ NodePath("../path2"), NodePath("../path3") ]
+
+[node name="path2" parent="Map" instance=ExtResource( 2 )]
+position = Vector2( 207, -99 )
+
+[node name="path3" parent="Map" instance=ExtResource( 2 )]
+position = Vector2( -155, -39 )
+neighbours = [ NodePath("../path"), NodePath("../path2") ]

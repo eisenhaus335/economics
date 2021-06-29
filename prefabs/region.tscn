@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="region" type="Node2D"]
+
+[node name="buildings" type="Node" parent="."]
+
+[node name="population" type="Node" parent="."]
